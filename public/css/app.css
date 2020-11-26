@@ -1,0 +1,28 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.btn{
+    margin-left: 10px;
+    background-color: #fff;
+    color: #cc6600;
+}
+
+body{
+    background-color:#f2f2f2;
+}
+
+.footerShop{
+    background-color: #fffcf4;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav-link, .fab, .fas, .far{
+    color: #cc6600;
+}
+
