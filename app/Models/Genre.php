@@ -24,8 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $books_count
  */
 
-class Genre extends Model
-{
+class Genre extends Model{
     use HasFactory;
 
     public function books(){

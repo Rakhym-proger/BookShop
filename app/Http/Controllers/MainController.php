@@ -6,6 +6,7 @@ use App\Models\Author;
 use App\Models\Book;
 use App\Models\Country;
 use App\Models\Genre;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller{
@@ -25,19 +26,7 @@ class MainController extends Controller{
         return view('review', ['reviews' => Book::all()]);
     }
     public function review_check(Request $request){
-//        $valid = $request->validate([
-//            'email'=>'required|min:4|max:100',
-//            'title'=>'required|min:4|max:100',
-//            'message'=>'required|min:15|max:900'
-//        ]);
-//
-//        $review = new Contact();
-//        $review->email = $request->input('email');
-//        $review->title = $request->input('title');
-//        $review->message = $request->input('message');
-//
-//        $review->save();
-
         return redirect()->route('review');
     }
+
 }

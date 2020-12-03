@@ -22,12 +22,23 @@
                 <li class="nav-item active">
                     <a class="nav-link ml-3" href="{{route('review')}}">Отзывы</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link ml-3" href="{{route('home')}}">Войти</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link ml-3" href="{{route('signup')}}">Регистрация</a>
-                </li>
+                @if(Auth::check())
+
+                    <li class="nav-item active">
+                        <a class="nav-link ml-3" href="{{route('admin_users')}}">{{ Auth::user()->getNameOrLogin() }}</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link ml-3" href="{{route('signout')}}">Выйти</a>
+                    </li>
+                @else
+
+                    <li class="nav-item active">
+                        <a class="nav-link ml-3" href="{{route('signin')}}">Войти</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link ml-3" href="{{route('signup')}}">Регистрация</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

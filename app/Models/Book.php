@@ -30,10 +30,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Genre[] $genres
  * @property-read int|null $genres_count
  */
-class Book extends Model
-{
-    use HasFactory;
 
+class Book extends Model {
+
+    use HasFactory;
 
     public function author(){
         return $this->belongsTo(Author::class);
@@ -43,11 +43,8 @@ class Book extends Model
         return $this->belongsToMany(Genre::class);
     }
 
-//    public function users(){
-//        return $this->belongsToMany(User::class);
-//    }
-
-
-
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 
 }

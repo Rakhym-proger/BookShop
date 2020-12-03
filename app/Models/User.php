@@ -68,4 +68,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getName(){
+        if($this->name && $this->surname){
+            return "{$this->name} {$this->surname}";
+        }
+        if($this->surname){
+            return "{$this->surname}";
+        }
+
+        return null;
+    }
+
+    public function getNameOrLogin(){
+        return $this->getName() ?: $this->email;
+    }
+
+    public function books(){
+        return $this->belongsToMany(Book::class);
+    }
+
+    public function is_admin(){
+        return $this->is_admin === 1;
+    }
 }

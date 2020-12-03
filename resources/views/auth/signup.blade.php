@@ -79,12 +79,8 @@
                         @endif
                     </div>
                 </div>
-
                 <button type="submit" class="btn btn-warning w-100 m-0">Регистрация</button>
-
             </form>
         </div>
-
     </div>
-
 @endsection

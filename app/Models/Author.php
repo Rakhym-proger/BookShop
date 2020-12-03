@@ -30,6 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Book[] $books
  * @property-read int|null $books_count
  */
+
 class Author extends Model
 {
     use HasFactory;

@@ -4,18 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookGenreTable extends Migration {
+class AlterTableUsers extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up(){
-
-        Schema::create('book_genre', function (Blueprint $table) {
-            $table->id('id');
-            $table->integer('book_id');
-            $table->integer('genre_id');
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->tinyInteger('is_admin')->default(0);
         });
     }
 
@@ -26,6 +25,8 @@ class CreateBookGenreTable extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('book_genre');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_admin');
+        });
     }
 }
