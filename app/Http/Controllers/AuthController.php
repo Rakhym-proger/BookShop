@@ -35,7 +35,6 @@ class AuthController extends Controller {
             ->with('info', 'Welcome to the BookShok.kz dear '.$request->input('name'));
     }
 
-
     public function getSignin(){
         return view('auth.signin');
     }

@@ -19,10 +19,10 @@
                 <li class="nav-item active">
                     <a class="nav-link ml-3" href="{{route('about')}}">О нас</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link ml-3" href="{{route('review')}}">Отзывы</a>
-                </li>
                 @if(Auth::check())
+                    <li class="nav-item active">
+                        <a class="nav-link ml-3" href="{{route('review')}}">Отзывы</a>
+                    </li>
 
                     <li class="nav-item active">
                         <a class="nav-link ml-3" href="{{route('admin_users')}}">{{ Auth::user()->getNameOrLogin() }}</a>

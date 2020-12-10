@@ -46,11 +46,13 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="post">
+                <form action="{{ route('admin_genres') }}" method="post">
                     @csrf
                     <div class="modal-body">
-
-
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Genre name</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -32,13 +32,18 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/review/check', [\App\Http\Controllers\MainController::class, 'review_check'])->name('send_form');
 
     Route::group(['middleware' => 'is_admin'], function () {
-
         Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin_users'])->name('admin_users');
         Route::get('/admin/books', [\App\Http\Controllers\AdminController::class, 'admin_books'])->name('admin_books');
-        Route::get('/admin/genres', [\App\Http\Controllers\AdminController::class, 'admin_genres'])->name('admin_genres');
-        Route::get('/admin/authors', [\App\Http\Controllers\AdminController::class, 'admin_authors'])->name('admin_authors');
-        Route::get('/admin/countries', [\App\Http\Controllers\AdminController::class, 'admin_countries'])->name('admin_countries');
-    });
+        Route::post('/admin/books', [\App\Http\Controllers\AdminController::class, 'admin_books_post'])->name('admin_books');
 
+        Route::get('/admin/genres', [\App\Http\Controllers\AdminController::class, 'admin_genres'])->name('admin_genres');
+        Route::post('/admin/genres', [\App\Http\Controllers\AdminController::class, 'admin_genres_post'])->name('admin_genres');
+
+        Route::get('/admin/authors', [\App\Http\Controllers\AdminController::class, 'admin_authors'])->name('admin_authors');
+        Route::post('/admin/authors', [\App\Http\Controllers\AdminController::class, 'admin_authors_post'])->name('admin_authors');
+
+        Route::get('/admin/countries', [\App\Http\Controllers\AdminController::class, 'admin_countries'])->name('admin_countries');
+        Route::post('/admin/countries', [\App\Http\Controllers\AdminController::class, 'admin_countries_post'])->name('admin_countries');
+    });
 });
 

@@ -52,10 +52,37 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="post">
+                <form action="{{ route('admin_books') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
-
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Book name</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author name</label>
+                            <select class="form-control" id="author" name="author">
+                                @foreach($authors as $author)
+                                    <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cost" class="form-label">Cost</label>
+                            <input type="number" class="form-control" id="cost" name="cost" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Written date</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="img" class="form-label">Chose image of book</label>
+                            <input class="form-control" type="file" id="img" name="img">
+                        </div>
+                        <div class="mb-3">
+                            <label for="filename" class="form-label">Upload a book</label>
+                            <input class="form-control" type="file" id="filename" name="filename" required>
+                        </div>
 
                     </div>
                     <div class="modal-footer">

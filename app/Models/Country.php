@@ -26,6 +26,7 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     public function authors(){
         return $this->hasMany(Author::class);

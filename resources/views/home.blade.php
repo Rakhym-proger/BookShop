@@ -17,7 +17,7 @@
         @foreach($books as $book)
             <div class="col-2 m-0">
                 <div class="card mb-2 w-100" style="height: 400px;">
-                    <img src="{{ $book->img }}" class="card-img-top" alt="..." style="height: 200px; margin-bottom: -20px;">
+                    <img src="{{ "storage/images/".$book->img }}" class="card-img-top" alt="{{ $book->img }}" style="height: 200px; margin-bottom: -20px;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $book->name }}</h5>
                         <p class="card-text">{{ $book->author->name . " " . $book->author->surname }} <small>{{ $book->date }}</small></p>
