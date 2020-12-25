@@ -31,7 +31,6 @@
                         <a class="nav-link ml-3" href="{{route('signout')}}">Выйти</a>
                     </li>
                 @else
-
                     <li class="nav-item active">
                         <a class="nav-link ml-3" href="{{route('signin')}}">Войти</a>
                     </li>

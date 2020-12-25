@@ -83,7 +83,6 @@
                             <label for="filename" class="form-label">Upload a book</label>
                             <input class="form-control" type="file" id="filename" name="filename" required>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

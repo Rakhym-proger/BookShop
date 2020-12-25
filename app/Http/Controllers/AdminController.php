@@ -19,10 +19,12 @@ class AdminController extends Controller {
     public function admin_books(Request $request) {
         return view('admin_books', [
             'books' => Book::all(),
+            'genres' => Genre::all(),
             'authors' => Author::all()
         ]);
     }
     public function admin_books_post(Request $request) {
+//        dd($request);
         if($request->hasFile('filename')){
             $file = $request->file('filename');
             $file_name = time().".".$file->getClientOriginalExtension();
@@ -37,6 +39,7 @@ class AdminController extends Controller {
                 $img->storeAs('public/images', $img_name);
             }
 
+//            $book = Book::create([
             Book::create([
                 'name' => $request->input('name'),
                 'date' => $request->input('date'),
@@ -45,6 +48,10 @@ class AdminController extends Controller {
                 'img' => $img_name,
                 'filename' => $file_name
             ]);
+//            $newBook = Book::find($book->id);
+//
+//            $newBook->genres->
+
         }
         return view('admin_books', [
             'books' => Book::all(),

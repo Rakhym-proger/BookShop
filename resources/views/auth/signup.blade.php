@@ -3,9 +3,15 @@
 @section('title')Регистрация@endsection
 
 @section('main_content')
+    <style>
+        .error {
+            color: red;
+            font-style: italic;
+        }
+    </style>
     <div class="row">
         <div class="col-6 offset-3">
-            <form action="{{route('signup')}}" method="post" novalidate>
+            <form action="{{route('signup')}}" method="post" novalidate id="registerForm">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email адерес</label>
@@ -83,4 +89,66 @@
             </form>
         </div>
     </div>
+
+
+    <script>
+
+        if ($("#registerForm").length > 0) {
+            $('#registerForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        maxlength: 50
+                    },
+                    surname: {
+                        required: true,
+                        maxlength: 50
+                    },
+                    date: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        maxlength: 50,
+                        email: true,
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8,
+                    },
+                    password_confirmation: {
+                        required: true,
+                        minlength: 8,
+                        equalTo: '#password'
+                    },
+                },
+                messages: {
+                    name: {
+                        required: "Please enter name",
+                    },
+                    surname: {
+                        required: "Please enter surname",
+                    },
+                    date: {
+                        required: "Please enter date",
+                    },
+                    email: {
+                        required: "Please enter email",
+                        email: "Please enter valid email",
+                        maxlength: "The email name should less than or equal to 50 characters",
+                    },
+                    password: {
+                        required: "Please enter password",
+                        minlength: "Password must contain at least 8 characters",
+                    },
+                    password_confirmation: {
+                        required: "This field is required",
+                        minlength: "Password must contain at least 8 characters",
+                        equalTo: "Passwords doesn't match"
+                    },
+
+                },
+            });
+        }
+    </script>
 @endsection

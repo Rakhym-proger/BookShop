@@ -27,4 +27,17 @@
             </div>
         @endforeach
     </div>
+
+{{--    <script>--}}
+{{--        $("#check").on('click', function (){--}}
+
+{{--            let route = {{ route('') }};--}}
+
+{{--            alert("route");--}}
+{{--            // alert(route);--}}
+{{--        });--}}
+{{--        function roha(){--}}
+
+{{--        }--}}
+    </script>
 @endsection
